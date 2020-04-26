@@ -20,5 +20,6 @@ print(list)
 
 list3 = [1, 1.2, 'name', 1+2j]
 print(list3)
-list[0] = list[0]++
+#list[0] = list[0]+3 #can only concatenate str (not "int") to str
+list3[0] = 3 #list 可以修改元素
 print(list3)
