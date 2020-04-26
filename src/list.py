@@ -17,3 +17,8 @@ print((list+list2+['j', 'u', 'n'])[0::2]) #按步长2截取
 
 list[0:2] = [] #删除某段元素
 print(list)
+
+list3 = [1, 1.2, 'name', 1+2j]
+print(list3)
+list[0] = list[0]++
+print(list3)
