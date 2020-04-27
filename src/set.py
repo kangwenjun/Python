@@ -2,7 +2,13 @@
 # coding=utf-8
 
 student = {'Tom', 'Jim', 'Mary', "Tom", "Jack", "Rose"}
-print(student) #集合自动去重
+print("student:\t", student) #集合自动去重
+
+empty = set()
+print("empty:\t", empty)
+
+all = {1, 1.2, True, "name"}
+print("all:\t", all)
 
 #成员测试
 if "Rose" in student :
