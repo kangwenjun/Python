@@ -2,7 +2,10 @@
 # coding=utf-8
 
 list = ['k', 'a', 'n', 'g']
+
+#取全部元素
 print(list)
+print(list[:])
 print(list[0:])
 print(list[-1::-1]) #逆向读取
 
