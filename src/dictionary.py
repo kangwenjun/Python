@@ -12,8 +12,13 @@ student.clear()
 print(student.keys())
 print(student.values())
 
+good = dict([("apple", 23), ("huawei", 98), ("lenovo", 100)])
+print(good)
+
 name = "kang"
 age = 32
-dict = {}
+dict = {} #保留字"dict"被覆盖
 dict[name] = age #关键字必须为不可变类型
 print(dict)
+
+#good = dict([("apple", 23), ("huawei", 98), ("lenovo", 100)]) #保留字"dict"已被覆盖，无法使用
