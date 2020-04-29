@@ -59,3 +59,19 @@ print(tupple[1]) #整数部分:浮点数
 
 #math.sqrt
 print("math.sqrt(100): ", math.sqrt(100))
+
+#三角函数
+print("math.cos(3): ", math.cos(3))
+print("math.sin(3): ", math.sin(3))
+print("math.tan(3): ", math.tan(3))
+
+print("math.acos(math.cos(3)): ", math.acos(math.cos(3)))
+print("math.asin(math.sin(3)): ", math.asin(math.sin(3)))
+print("math.atan(math.tan(3)): ", math.atan(math.tan(3)))
+
+y = 0.5
+x = 0.5
+print("math.atan2(0.5, 0.5): ", math.atan2(y, x)) #返回给定的 X 及 Y 坐标值的反正切值
+print("math.hypot(0, 2): ", math.hypot(0, 2)) #返回欧几里德范数 sqrt(x*x + y*y)
+print("math.radians(math.pi): ", math.radians(math.pi)) #将角度转换为弧度
+print("math.degress(math.radians(math.pi)): ", math.degrees(math.radians(math.pi))) #将弧度转换为角度
