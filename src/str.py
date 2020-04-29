@@ -64,6 +64,10 @@ GBKToStr = strGbk.decode("GBK", "strict")
 print("type(utf8ToStr):", type(utf8ToStr))
 print("type(GBKToStr):", type(GBKToStr))
 
+#endswith
+name = "[kang wen jun]"
+print("endswith:", name.endswith("]"))
+print("endswith-start-end:", name.endswith("wen", 2, -5)) #包括end那个字符
 
 #UTF-8转GBK
 print("UTF-8 TO GBK:", strUtf8.decode("utf-8", "strict").encode("GBK", "strict").decode("GBK", "strict"))
