@@ -80,3 +80,61 @@ print("\\f:\t", "\"\f\"")
 print("\\o10: ", "\o12")
 print("\\x10: ", "\x10")
 print("\\other: ", "\x10")
+
+tabs = "\"\t\"\t\""
+print("tabs:\t", tabs.encode("utf-8", "strict"))
+tabs = tabs.expandtabs()
+print("expandtabs:\t", tabs.encode("utf-8", "strict")) #显示效果一致，但已将水平制表符转为空格
+
+name = "kang wen jun"
+index = name.find("wen", 5, -4) #左闭右开
+if index > 0 :
+	print("index:\t", index)
+index = name.rfind("n")
+print("rfind:\t", "justin".rfind("in"))
+	
+index = name.index("wen", 5, -4)
+print("index:\t", index)
+print("rindex:\t", "kang wen jun".rindex("wen"))
+#index = name.index("wen", 5, -5) #跟find()方法一样，只不过如果str不在字符串中会报一个异常.
+
+print("isalnum:\t", "name康文君age23".isalnum()) #UNICODE字符，数字
+print("isalpha:\t", "name康文君".isalpha()) #UNICODE字符
+print("isdigit:\t", "1一".isdigit()) #False
+print("isnumeric:\t", "½1一3²\u00B2".isnumeric())
+
+print("islower:\t", "justin".islower())
+print("isupper:\t", "CHINA".isupper())
+print("isspace:\t", "\t \v".isspace())
+print("istitle:\t", "China Is Great".istitle()) #如果字符串中所有的单词拼写首字母是否为大写，且其他字母为小写则返回 True，否则返回 False.
+
+print("join:\t", "-".join(("kang", "wen", "jun"))) #以-连接各个元素
+print("lower:\t", "CHINA".lower())
+print("upper:\t", "justin".upper())
+print("ljust:\t", "justin".ljust(23, "-")) #返回一个原字符串左对齐,并使用空格(可指定字符)填充至指定长度的新字符串。
+print("rjust:\t", "justin".rjust(23, "-"))
+print("lstrip:\t", "justin".rjust(23, "-").lstrip("-"))
+print("rstrip:\t", "justin".ljust(23, "-").rstrip("-"))
+print("lstrip-default:\t", "    justin".lstrip())
+
+#print("splict:", 
+
+intab = "aeiou"
+outtab = "12345" #长度与intab一致，字符一一对应,如a对应1，并翻译成1
+#str = "china"
+tabtrans = str.maketrans(intab, outtab) #1. 创建内建的映射表
+str = "china"
+print("maketrans-translate:\t", str.translate(tabtrans)) #2. 按映射表进行转译
+
+print("replace-all:\t", "liao liao wen jun".replace("liao", "kang"))
+print("replace-some:\t", "liao liao wen jun".replace("liao", "kang", 1))
+
+#len
+print("len-str:\t", len("justin"))
+print("len-tupple:\t", len(("kang", "wen", "jun")))
+print("len-list:\t", len(["kang", "wen", "jun"]))
+print("len-dictionary:\t", len({"name":"justin", "age":23}))
+print("len-set:\t", len({"justin", "23"}))
+
+print("max:\t", max("abcde"))
+print("min:\t", min("abcde"))
