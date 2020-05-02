@@ -64,6 +64,11 @@ GBKToStr = strGbk.decode("GBK", "strict")
 print("type(utf8ToStr):", type(utf8ToStr))
 print("type(GBKToStr):", type(GBKToStr))
 
+#startswiths
+print("startswith:", "I'm chinese. I'm 23".startswith("I"))
+print("startswith-start:", "I'm chinese. I'm 23".startswith("chinese", 4))
+print("startswith-start-end:", "I'm chinese. I'm 23".startswith("chinese", 4, -8)) #[4,-8)
+
 #endswith
 name = "[kang wen jun]"
 print("endswith:", name.endswith("]"))
@@ -101,6 +106,7 @@ print("rindex:\t", "kang wen jun".rindex("wen"))
 print("isalnum:\t", "name康文君age23".isalnum()) #UNICODE字符，数字
 print("isalpha:\t", "name康文君".isalpha()) #UNICODE字符
 print("isdigit:\t", "1一".isdigit()) #False
+print("isdecimal:\t", "12334".isdecimal())
 print("isnumeric:\t", "½1一3²\u00B2".isnumeric())
 
 print("islower:\t", "justin".islower())
@@ -108,23 +114,40 @@ print("isupper:\t", "CHINA".isupper())
 print("isspace:\t", "\t \v".isspace())
 print("istitle:\t", "China Is Great".istitle()) #如果字符串中所有的单词拼写首字母是否为大写，且其他字母为小写则返回 True，否则返回 False.
 
-print("join:\t", "-".join(("kang", "wen", "jun"))) #以-连接各个元素
 print("lower:\t", "CHINA".lower())
 print("upper:\t", "justin".upper())
+print("swapcase:\t", "Justin".swapcase())
+
+print("join:\t", "-".join(("kang", "wen", "jun"))) #以-连接各个元素
 print("ljust:\t", "justin".ljust(23, "-")) #返回一个原字符串左对齐,并使用空格(可指定字符)填充至指定长度的新字符串。
 print("rjust:\t", "justin".rjust(23, "-"))
 print("lstrip:\t", "justin".rjust(23, "-").lstrip("-"))
 print("rstrip:\t", "justin".ljust(23, "-").rstrip("-"))
 print("lstrip-default:\t", "    justin".lstrip())
+print("zill:\t", "justin".zfill(10)) #
 
-#print("splict:", 
+print("split:", "I'm chinese. I'm 23".split())
+print("split-m:", "I'm chinese. I'm 23".split("m"))
+print("split-m-1:", "I'm chinese. I'm 23".split("m", 1)) #最多1次分割
+print("split-m-0:", "I'm chinese. I'm 23".split("m", 0))
+
+#splitlines
+print("splitlines-keepens=False:", "I'm chinese.\nI'm 23 old".splitlines()) #don't keepends
+print("splitlines-keepends=True:", "I'm chinese.\nI'm 23 old".splitlines(True)) #keepens
+print("splitlines-\\r:", "I'm chinese.\rI'm 23 old".splitlines()) #don't keepends
+print("splitlines-\\r\\n:", "I'm chinese.\r\nI'm 23 old".splitlines()) #don't keepends
 
 intab = "aeiou"
 outtab = "12345" #长度与intab一致，字符一一对应,如a对应1，并翻译成1
-#str = "china"
 tabtrans = str.maketrans(intab, outtab) #1. 创建内建的映射表
 str = "china"
 print("maketrans-translate:\t", str.translate(tabtrans)) #2. 按映射表进行转译
+print("maketrans-translate:\t", "chinese".translate(tabtrans)) #2. 按映射表进行转译
+
+#bytes.maketrans,bytes.translate
+bytes_tabtrans = bytes.maketrans(intab.encode("UTF-8", "strict"), outtab.encode("utf-8", "strict"))
+print("bytes-maketrans-translate:\t", b"china".translate(bytes_tabtrans)) #2. 按映射表进行转译
+print("bytes-maketrans-translate-delete:\t", b"china".translate(bytes_tabtrans, b"a"))#2. 按映射表进行转译,并删除字母o
 
 print("replace-all:\t", "liao liao wen jun".replace("liao", "kang"))
 print("replace-some:\t", "liao liao wen jun".replace("liao", "kang", 1))
