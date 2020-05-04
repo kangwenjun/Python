@@ -11,7 +11,8 @@ print("type({}.keys()):\t", type({}.keys()))
 print("type({}.values()):\t", type({}.values()))
 
 print('\n----------------initialization----------------')
-print('dict([("Tom", 23), ("Jack", 22)]):\t', dict([("Tom", 23), ("Jack", 22)]))
+print('dict([("Tom", 23), ("Jack", 22)]):\t', dict([("Tom", 23), ("Jack", 22)])) #键值对元组
+print('dict(Tom=23, Jack=22):\t', dict(Tom=23, Jack=22)) #构造函数中传入关键字参数，以关键字作为“字符串键”
 print('type({"Tom":"23", "Tim":21, "Jack":"China"}.items()):\t', type({"Tom":"23", "Tim":21, "Jack":"China"}.items()))
 print('{"Tom":"23", "Tim":21, "Jack":"China"}.items():\t', {"Tom":"23", "Tim":21, "Jack":"China"}.items())
 
@@ -94,6 +95,12 @@ print('"Tom" in {"Tom":"23", "Tim":21, "Jack":"China"}:\t', "Tom" in {"Tom":"23"
 print('\n----------------get----------------')
 print('{"Tom":"23", "Tim":21, "Jack":"China"}.get("Tom"):\t', {"Tom":"23", "Tim":21, "Jack":"China"}.get("Tom"))
 print('{"Tom":"23", "Tim":21, "Jack":"China"}.get("Lucy", 33):\t', {"Tom":"23", "Tim":21, "Jack":"China"}.get("Lucy", 33))
+
+print('\n----------------items----------------')
+for k, v in {"Tom":"23", "Tim":21}.items():
+	print("(", k, ",", v, ")\t", end="")
+else:
+	print("\n", end="")
 
 print('\n----------------other----------------')
 print('len({"Tom":"23", "Tim":21, "Jack":"China"}):\t', len({"Tom":"23", "Tim":21, "Jack":"China"}))
