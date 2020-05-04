@@ -8,6 +8,9 @@ fcur = 1
 fend = 2
 
 f = open(sys.argv[0], "r")
+print("isatty:", f.isatty())
+print("file name:", f.name)
+print("file no:", f.fileno())
 f.seek(0, fend)
 file_size = f.tell()
 
