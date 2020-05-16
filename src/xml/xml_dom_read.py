@@ -4,8 +4,8 @@
 from xml.dom.minidom import parse
 import xml.dom.minidom
 
-DOMTree = xml.dom.minidom.parse("movies.xml")
-root = DOMTree.documentElement
+doc = xml.dom.minidom.parse("movies.xml")
+root = doc.documentElement
 print("root-name:", root.tagName)
 if root.hasAttribute("self"):
 	print("root-self:", root.getAttribute("self"))
