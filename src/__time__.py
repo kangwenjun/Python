@@ -63,7 +63,9 @@ elif 0 == tm.tm_isdst:
 else:
 	print("time.altzone:is unknown Daylight Saving Time.")
 print("current_utc_time-current_gm_utc:", current_utc_time-current_gm_utc)
-print("zone by utc:", (current_utc_time-current_gm_utc) // 3600)
+print("timezone diff utcs:", (current_utc_time-current_gm_utc) // 3600)
+print("time.timezone:", time.timezone) #属性time.timezone是当地时区（未启动夏令时）距离格林威治的偏移秒数（>0，美洲;<=0大部分欧洲，亚洲，非洲）。
+print("time.tzname:", time.tzname)
 
 
 print('\n----------------clock----------------')
