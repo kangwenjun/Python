@@ -3,7 +3,10 @@
 
 import pymongo
 
-dbclient = pymongo.MongoClient("mongodb://localhost:27017/")
+#集群部署
+dbclient = pymongo.MongoClient("mongodb://localhost:27017,"
+								"localhost:27018"
+								"/?slaveOk=true")
 print('\n----------------MongoClient----------------')
 print("type(pymongo.MongoClient):", type(dbclient))
 print(dbclient)
