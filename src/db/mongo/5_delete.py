@@ -4,7 +4,8 @@
 import pymongo
 import random
 
-dbclient = pymongo.MongoClient("mongodb://localhost:27017/")
+#dbclient = pymongo.MongoClient("mongodb://localhost:27017/")
+dbclient = pymongo.MongoClient("mongodb://localhost:40000/pymongo?wtimeoutMS=1000&socketTimeoutMS=1000&connectTimeoutMS=1000") #连接分片集群route
 db = dbclient["pymongo"]
 personal_info = db["personal_info"]
 

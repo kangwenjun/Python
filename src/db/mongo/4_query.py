@@ -4,9 +4,9 @@
 import pymongo
 
 #集群部署
-dbclient = pymongo.MongoClient("mongodb://localhost:27017,"
-								"localhost:27018"
-								"/?slaveOk=true")
+#dbclient = pymongo.MongoClient("mongodb://localhost:27017,localhost:27018/?slaveOk=true")
+dbclient = pymongo.MongoClient("mongodb://localhost:40000/pymongo?wtimeoutMS=1000&socketTimeoutMS=1000&connectTimeoutMS=1000") #连接分片集群route
+
 print('\n----------------MongoClient----------------')
 print("type(pymongo.MongoClient):", type(dbclient))
 print(dbclient)

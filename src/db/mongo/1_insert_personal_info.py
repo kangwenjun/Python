@@ -3,7 +3,8 @@
 
 import pymongo
 
-dbclient = pymongo.MongoClient("mongodb://localhost:27017/pymongo?wtimeoutMS=1000&socketTimeoutMS=1000&connectTimeoutMS=1000") #连接数据库服务端
+#dbclient = pymongo.MongoClient("mongodb://localhost:27017/pymongo?wtimeoutMS=1000&socketTimeoutMS=1000&connectTimeoutMS=1000") #连接数据库服务端
+dbclient = pymongo.MongoClient("mongodb://localhost:40000/pymongo?wtimeoutMS=1000&socketTimeoutMS=1000&connectTimeoutMS=1000") #连接分片集群route
 #print(dbclient) #关键信息为上述信息
 
 dbs = dbclient.list_database_names()	#连接数据库并获取数据库列表 show dbs
